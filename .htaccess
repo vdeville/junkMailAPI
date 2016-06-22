@@ -1,0 +1,4 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteRule ^domains/list$ ./ressources/call/getDomainsList.php [L]
