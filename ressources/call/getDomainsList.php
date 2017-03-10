@@ -3,13 +3,14 @@
 require_once '../config.inc.php';
 include_once '../functions.inc.php';
 
+$domains = array();
 
-$fileInfo = $client->api('repo')->contents()->show('MyTheValentinus', 'junkMail', 'domains');
+$domainsList = scandir(GIT_PATH_DOMAINS);
 
-$array = array();
-
-foreach ($fileInfo as $file){
-    array_push($array, $file['name']);
+foreach ($domainsList as $file){
+    if(!is_dir($file)){
+        array_push($domains, $file);
+    }
 }
 
-echo jsonJeTeCode($array);
+echo jsonJeTeCode($domains);
