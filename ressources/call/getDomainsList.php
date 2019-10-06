@@ -13,4 +13,6 @@ foreach ($domainsList as $file){
     }
 }
 
+header('Content-Type: application/json');
+
 echo jsonJeTeCode($domains);
