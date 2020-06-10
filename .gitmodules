@@ -1,0 +1,3 @@
+[submodule "junkMail"]
+	path = junkMail
+	url = https://github.com/MyTheValentinus/junkMail.git
