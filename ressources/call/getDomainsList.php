@@ -1,18 +1,17 @@
 <?php
 
 require_once '../config.inc.php';
-include_once '../functions.inc.php';
 
-$domains = array();
+$domains = [];
 
 $domainsList = scandir(GIT_PATH_DOMAINS);
 
-foreach ($domainsList as $file){
-    if(!is_dir($file)){
+foreach ($domainsList as $file) {
+    if (!is_dir($file)) {
         array_push($domains, $file);
     }
 }
 
 header('Content-Type: application/json');
 
-echo jsonJeTeCode($domains);
+echo json_encode($domains, JSON_FORCE_OBJECT);

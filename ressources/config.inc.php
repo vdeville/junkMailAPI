@@ -1,4 +1,7 @@
 <?php
 
-// Define where the git repo is on server
-define('GIT_PATH_DOMAINS', '/Users/valentin/dev/add-junkmail/junkMail/domains/');
+if(getenv("GIT_PATH_DOMAINS") !== false) {
+    define('GIT_PATH_DOMAINS', getcwd() . '../junkMail/domains/');
+} else {
+    define('GIT_PATH_DOMAINS', getenv('GIT_PATH_DOMAINS'));
+}
